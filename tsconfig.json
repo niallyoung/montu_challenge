@@ -8,7 +8,8 @@
     "allowJs": false,
     "declaration": true,
     "moduleResolution": "node",
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist", "rollup.config.js"]

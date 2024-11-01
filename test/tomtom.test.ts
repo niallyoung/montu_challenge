@@ -1,5 +1,5 @@
 import { config } from 'dotenv'
-import { addressSearch} from "../src/tomtom";
+import { addressSearch} from '../src/tomtom';
 import { describe, it, expect } from '@jest/globals'
 
 config()
