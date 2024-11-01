@@ -1,5 +1,5 @@
 .idea
-.env
+.env*
 coverage
 node_modules
 dist

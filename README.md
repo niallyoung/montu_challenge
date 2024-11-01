@@ -2,40 +2,49 @@
 
 `montu_challenge` presents a simple npm/ts library to perform fuzzy search matching of Australian addresses.
 
-`TOMTOM_API_KEY` Environment variable is injected via `dotenv`. `jest` is used for testing.
+- `Makefile` for language-agnostic CICD
+- `yarn` for dependency management
+- `jest` for testing
+- `rollup` for build
+- `TOMTOM_API_KEY` ENV injection via `dotenv` local .env file (gitignore .env*)
 
-GitHub Actions Workflow will be spun up shortly for CICD, building and testing the repo behind a standardised,
-language-agnostic `Makefile`
+---
 
 ## TODO
 
-* initial search function interface with tests
-* stub tests running
 * pluggable / modular TomTom search implementation with tests
 * spin up simple github actions workflow (Makefile)
 * review functionality vs. requirements, test coverage, overall quality, docs and comments
 * consume the library as a client, ensure it's easy to adopt (npm publish necessary?)
 
+---
+
 ## USAGE
 
+*** TBC ***
+
+NOTE: package yet to be published to npm repository for consumption
+
+## DEVELOPMENT
+
 ```shell
-yarn install
+make
 ```
 
 ## Test
 
-Populate a local `./.env` file with `TOMTOM_API_KEY` configured:
+```shell
+make test
+```
+
+When integrating with your client code, ensure you're providing Environment variable `TOMTOM_API_KEY` e.g. via a local
+`.env` file:
 
 ```code
-TOMTOM_API_KEY=...
+TOMTOM_API_KEY=xyz
 ```
 
-and then execute:
-
-```shell
-yarn test
-```
-
+---
 ## Montu Challenge Details
 
 ### Scenario
