@@ -1,0 +1,15 @@
+{
+  "name": "montu_challenge",
+  "version": "0.0.1",
+  "description": "platform/devx code test",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --setupFiles dotenv/config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/niallyoung/montu_challenge"
+  },
+  "author": "Niall Young <5465765+niallyoung@users.noreply.github.com>",
+  "license": "MIT"
+}
