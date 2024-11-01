@@ -7,7 +7,7 @@
     "build": "rollup -c",
     "dev": "concurrently \"tsc --watch\" \"nodemon ./dist/index.js\"",
     "test": "jest --setupFiles dotenv/config",
-    "lint:check": "eslint --debug --max-warnings=0",
+    "lint:check": "eslint --debug --max-warnings=0 --ignore-pattern=coverage",
     "ts:check": "tsc --noEmit"
   },
   "repository": {
