@@ -9,10 +9,9 @@ language-agnostic `Makefile`
 
 ## TODO
 
-* initial repo structure
+* initial search function interface with tests
 * npm/ts toolchain setup, dotenv
 * stub tests running
-* initial search function interface with tests
 * pluggable / modular TomTom search implementation with tests
 * build into dist/
 * spin up a Makefile and simple github actions workflow
