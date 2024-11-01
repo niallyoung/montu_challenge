@@ -10,11 +10,9 @@ language-agnostic `Makefile`
 ## TODO
 
 * initial search function interface with tests
-* npm/ts toolchain setup, dotenv
 * stub tests running
 * pluggable / modular TomTom search implementation with tests
-* build into dist/
-* spin up a Makefile and simple github actions workflow
+* spin up simple github actions workflow (Makefile)
 * review functionality vs. requirements, test coverage, overall quality, docs and comments
 * consume the library as a client, ensure it's easy to adopt (npm publish necessary?)
 
