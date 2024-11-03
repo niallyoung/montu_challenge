@@ -1,7 +1,7 @@
 import { SearchResult } from '../src'
 import { config } from 'dotenv'
 import { addressSearch} from '../src/tomtom';
-import { describe, expect, it } from '@jest/globals'
+import { describe, expect, it, jest } from '@jest/globals'
 
 config()
 const apiKey = process.env.TOMTOM_API_KEY;
@@ -35,9 +35,7 @@ describe('addressSearch()', () => {
 // describe('with mocked axios data, addressSearch()', () => {
 //     const mockAxios = axios as jest.Mocked<typeof axios>;
 //     beforeEach(() => {
-//         mockAxios.request.mockImplementationOnce((): Promise<any> => Promise.resolve({
-//             data: { results: [fakeResults] }
-//         }));
+//         mockAxios.request.mockImplementationOnce(() : Promise<any> => Promise.resolve(fakeResults));
 //     });
 //
 //     it('returns the expected results', async () => {
