@@ -10,7 +10,7 @@ export interface addressSearchParams {
     countrySet?: string;
 }
 
-export async function addressSearch(searchParams: addressSearchParams) {
+export async function addressSearch(searchParams: addressSearchParams): Promise<SearchResult[]> {
     const response = await axios.get(tomTomURL + `/search/2/search/${searchParams.address}.json'`, {
         params: { ...searchParams }
     });

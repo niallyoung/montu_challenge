@@ -13,11 +13,5 @@ export interface SearchResult {
 }
 
 export async function getAddressSearchResults(address: any): Promise<any> {
-    return addressSearch({
-        key: apiKey,
-        countrySet: 'AU',
-        address,
-    }).catch(error => {
-        Promise.reject(error)
-    })
+    return addressSearch({ key: apiKey, countrySet: 'AU', address })
 }
