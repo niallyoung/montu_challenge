@@ -1,0 +1,49 @@
+name: branches
+
+on:
+  push:
+    branches: [ '**' ]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: yarn install
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ github.sha }}
+
+  lint:
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Cached node modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ github.sha }}
+      - name: eslint
+        run: yarn run lint:check
+      - name: ts:check
+        run: yarn run ts:check
+
+  unit_tests:
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Cached node modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ github.sha }}
+      - name: Unit tests
+        run: make test
