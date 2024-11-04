@@ -2,11 +2,12 @@
 
 `montu_challenge` presents a simple npm/ts library to perform fuzzy search matching of Australian addresses.
 
-- `Makefile` for language-agnostic CICD
 - `yarn` for dependency management
 - `jest` for testing
 - `rollup` for build
+- `Makefile` for language-agnostic CICD
 - `TOMTOM_API_KEY` ENV injection via `dotenv` local .env file (gitignore .env*)
+- `GitHub Actions Workflow` for CICD (with `TOMTOM_API_KEY` secret injection)
 
 ---
 
