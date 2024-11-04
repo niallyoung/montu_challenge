@@ -1,4 +1,4 @@
-import {SearchResult} from './index'
+import { SearchResult } from './index'
 
 const axios = require('axios').default
 const tomTomURL = "https://api.tomtom.com"

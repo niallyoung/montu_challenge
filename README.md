@@ -12,21 +12,41 @@
 
 ## TODO
 
-* review functionality vs. requirements, test coverage, overall quality, docs and comments
-* pluggable / modular TomTom search implementation with tests
-* working mocks in all unit tests, no live fixtures or dependencies
-* consider a Service class (wrapping search functions) injectable dependencies e.g. TomTom implementation, vs. Generic / Test implementation
-* build and export matching Client (dog-food it for local testing and in CICD, integration and smoke tests etc.)
-* integration tests, smoke tests (if Service was also exposed via an API)
+NOTE: I'm actively learning Typescript on-demand for this challenge, have not used Promises, async-await, mocking, axios.
+
+Suspect I've been hitting up against outdated documentation, conflicting versions and incompatibilities - so 100% test
+coverage is unfortunately blocked on mocking:
+
+* `Typescript learning`: __mocks__ for all unit tests, no live fixtures or dependencies
+  * WIP: I've been struggling to get jest working with Axios, or simple funcs, see *.test.ts
+  * have followed at least a dozen different patterns to get mocking working - none have worked, many give immediate errors / compatibility / version issues?
+  * hitting my limit of Typescript/NodeJS here, given a bit more time I would figure out a working pattern
+* `Typescript learning`: consider a __Service class__ (wrapping search functions) injectable dependencies (easier to mock?)
+* local __Client__ consumer, to test and exercise function/Service implementation
+* dog-food __Client__ in integration and smoke tests (if Service exposed via API)
 
 
 ---
 
 ## USAGE
 
-*** TBC ***
+NOTE: package yet to be published to npm repository
 
-NOTE: package yet to be published to npm repository for consumption
+```javascript
+import getAddressSearchResults from '@montu_challenge'
+
+// return the promise
+const resultPromise = getAddressSearchResults("109 St Georges Terrace Perth 6000")
+...
+
+// handle the promise
+getAddressSearchResults().then((results) => {
+    ...
+}).catch((error) => {
+    ...
+})
+```
+
 
 ## DEVELOPMENT
 

@@ -1,4 +1,4 @@
-import { addressSearch } from './tomtom'
+import * as tomtom from './tomtom'
 
 export interface SearchResult {
     streetNumber: string;
@@ -15,7 +15,7 @@ interface AddressSearch {
 }
 
 export function getAddressSearchResults(address: any): Promise<any> {
-    return addressSearch({
+    return tomtom.addressSearch({
         key: process.env.TOMTOM_API_KEY,
         address: address,
         countrySet: 'AU'

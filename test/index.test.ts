@@ -3,7 +3,7 @@ import { getAddressSearchResults } from '../src';
 import { describe, it, expect } from '@jest/globals'
 import { loadFixture } from './helpers'
 import { jest } from '@jest/globals'
-import { addressSearch } from '../src/tomtom'
+import * as tomtom from '../src/tomtom'
 
 config()
 
@@ -13,7 +13,7 @@ config()
 describe('getAddressSearchResults()', () => {
     it('returns a promise', () => {
         jest.mock('../src/tomtom', () => ({
-            addressSearch: jest.fn(() => Promise.resolve())
+            addressSearch : jest.fn((searchParams: tomtom.addressSearchParams) : Promise<any> => Promise.resolve())
         }));
 
         const results = getAddressSearchResults('Smith St')
