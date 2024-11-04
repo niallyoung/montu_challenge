@@ -12,10 +12,9 @@
 
 ## TODO
 
-* pluggable / modular TomTom search implementation with tests
 * spin up simple github actions workflow (Makefile)
 * review functionality vs. requirements, test coverage, overall quality, docs and comments
-* consume the library as a client, ensure it's easy to adopt (npm publish necessary?)
+* pluggable / modular TomTom search implementation with tests
 
 ---
 
@@ -43,9 +42,32 @@ When integrating with your client code, ensure you're providing Environment vari
 ```code
 TOMTOM_API_KEY=xyz
 ```
+---
+# NPM library testing (manual)
+
+TODO: spin up a test client to consume a published npm module of montu_challenge/dist/index.js
+
+```shell
+set -a && source .env && set +a && npx run-func dist/index.js getAddressSearchResults "{ key: process.env.TOMTOM_API_KEY, countrySet: 'AU', address: "1 Eagle Street" }"
+```
+
+sample output:
+```code
+set -a && source .env && set +a && npx run-func dist/index.js getAddressSearchResults "{ key: process.env.TOMTOM_API_KEY, countrySet: 'AU', address: "1 Eagle Street QLD" }"
+[
+  {
+    streetNumber: undefined,
+    streetName: 'Mayne Street',
+    municipality: 'Tiaro',
+    country: 'Australia',
+    freeformAddress: 'Mayne Street, Tiaro, QLD, 4650'
+  },
+  ...
+]
+```
 
 ---
-## Montu Challenge Details
+# Montu Challenge Details
 
 ### Scenario
 
