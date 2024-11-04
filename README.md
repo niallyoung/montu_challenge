@@ -12,9 +12,13 @@
 
 ## TODO
 
-* spin up simple github actions workflow (Makefile)
 * review functionality vs. requirements, test coverage, overall quality, docs and comments
 * pluggable / modular TomTom search implementation with tests
+* working mocks in all unit tests, no live fixtures or dependencies
+* consider a Service class (wrapping search functions) injectable dependencies e.g. TomTom implementation, vs. Generic / Test implementation
+* build and export matching Client (dog-food it for local testing and in CICD, integration and smoke tests etc.)
+* integration tests, smoke tests (if Service was also exposed via an API)
+
 
 ---
 
