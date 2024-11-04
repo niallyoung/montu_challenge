@@ -1,0 +1,82 @@
+[
+  {
+    "streetNumber": null,
+    "streetName": "Smith Street",
+    "municipality": "Melbourne",
+    "country": "Australia",
+    "freeformAddress": "Smith Street, Fitzroy, VIC, 3065, 3066",
+    "score": 6.4523925781
+  },
+  {
+    "streetNumber": null,
+    "streetName": "Little Smith Street",
+    "municipality": "Melbourne",
+    "country": "Australia",
+    "freeformAddress": "Little Smith Street, Fitzroy, VIC, 3065",
+    "score": 6.4080619812
+  },
+  {
+    "streetNumber": "305",
+    "streetName": "Smith Street",
+    "municipality": "Melbourne",
+    "country": "Australia",
+    "freeformAddress": "305 Smith Street, Fitzroy, VIC, 3065",
+    "score": 6.1879377365
+  },
+  {
+    "streetNumber": "279-281",
+    "streetName": "Smith Street",
+    "municipality": "Melbourne",
+    "country": "Australia",
+    "freeformAddress": "279-281 Smith Street, Fitzroy, VIC, 3065",
+    "score": 6.1879377365
+  },
+  {
+    "streetNumber": null,
+    "streetName": "Smith Street",
+    "municipality": "Melbourne",
+    "country": "Australia",
+    "freeformAddress": "Smith Street, Fitzroy, VIC, 3065",
+    "score": 6.1879377365
+  },
+  {
+    "streetNumber": null,
+    "streetName": "Queens Parade",
+    "municipality": "Melbourne",
+    "country": "Australia",
+    "freeformAddress": "Queens Parade, Fitzroy North, VIC, 3068",
+    "score": 6.1543030739
+  },
+  {
+    "streetNumber": "53",
+    "streetName": "Little Smith Street",
+    "municipality": "Melbourne",
+    "country": "Australia",
+    "freeformAddress": "53 Little Smith Street, Fitzroy, VIC, 3065",
+    "score": 6.1459541321
+  },
+  {
+    "streetNumber": "69",
+    "streetName": "Little Smith Street",
+    "municipality": "Melbourne",
+    "country": "Australia",
+    "freeformAddress": "69 Little Smith Street, Fitzroy, VIC, 3065",
+    "score": 6.1459541321
+  },
+  {
+    "streetNumber": "115",
+    "streetName": "Smith Street",
+    "municipality": "Melbourne",
+    "country": "Australia",
+    "freeformAddress": "115 Smith Street, Fitzroy, VIC, 3065",
+    "score": 6.1459541321
+  },
+  {
+    "streetNumber": "397",
+    "streetName": "Smith Street",
+    "municipality": "Melbourne",
+    "country": "Australia",
+    "freeformAddress": "397 Smith Street, Fitzroy, VIC, 3065",
+    "score": 6.1047692299
+  }
+]

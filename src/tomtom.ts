@@ -9,6 +9,9 @@ export interface addressSearchParams {
     countrySet: string;
 }
 
+// NOTE: I had trouble getting Promises .then().catch() working with axios.get, sticking with
+// async/await for now, will come back if I have time...
+
 export async function addressSearch(searchParams: addressSearchParams): Promise<any> {
     let response
     try {
@@ -38,9 +41,6 @@ export async function addressSearch(searchParams: addressSearchParams): Promise<
 
     return new Promise(function (resolve) { resolve(results) })
 }
-
-// NOTE: I had trouble getting Promises .then().catch() working with axios.get, sticking with
-// async/await for now, will come back if I have time...
 
 // export async function addressSearch(searchParams: addressSearchParams): Promise<any> {
 //     axios.get(tomTomURL + `/search/2/search/${searchParams.address}.json`, {

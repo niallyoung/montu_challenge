@@ -1,7 +1,7 @@
 import { addressSearch} from '../src/tomtom';
 import { config } from 'dotenv'
 import { describe, expect, it } from '@jest/globals'
-import fs from 'fs'
+import { loadFixture } from './helpers'
 
 // import { jest } from '@jest/globals'
 // import axios from 'axios'
@@ -37,33 +37,33 @@ describe('addressSearch()', () => {
     // it('catches errors and returns a rejected promise', () => {
     //     fail('not yet covered')
     //     // missing coverage from tomtom.ts
-    //     // 19: } catch (error) {
-    //     // 20:     return Promise.reject(error)
-    //     // 21: }
+    //     // 22: } catch (error) {
+    //     // 23:     return Promise.reject(error)
+    //     // 24: }
     // })
 
     // it('catches undefined and returns a rejected promise', () => {
     //     fail('not yet covered')
-    //     // 23: if (response === undefined) {
-    //     // 24:     return Promise.reject('response not found')
-    //     // 25: }
+    //     // 26: if (response === undefined) {
+    //     // 27:     return Promise.reject('response not found')
+    //     // 28: }
     // })
 
     // it('maps all results and returns a promise to resolve', async () => {
     //     fail('not yet covered')
-    //     // 27: const results = response.data.results.map(function (result) {
-    //     // 28:     const searchResult: SearchResult = {
-    //     // 29:         streetNumber: result.address.streetNumber,
-    //     // 30:         streetName: result.address.streetName,
-    //     // 31:         municipality: result.address.municipality,
-    //     // 32:         country: result.address.country,
-    //     // 33:         freeformAddress: result.address.freeformAddress,
-    //     // 34:         score: result.score,
-    //     // 35:     }
-    //     // 36:     return searchResult
-    //     // 37: })
-    //     // 38:
-    //     // 39: return new Promise(function (resolve) { resolve(results) })
+    //     // 30: const results = response.data.results.map(function (result) {
+    //     // 31:     const searchResult: SearchResult = {
+    //     // 32:         streetNumber: result.address.streetNumber,
+    //     // 33:         streetName: result.address.streetName,
+    //     // 34:         municipality: result.address.municipality,
+    //     // 35:         country: result.address.country,
+    //     // 36:         freeformAddress: result.address.freeformAddress,
+    //     // 37:         score: result.score,
+    //     // 38:     }
+    //     // 39:     return searchResult
+    //     // 40: })
+    //     // 41:
+    //     // 42: return new Promise(function (resolve) { resolve(results) })
     // })
 })
 
@@ -94,23 +94,3 @@ describe('addressSearch()', () => {
 //         })
 //     })
 // })
-
-function loadFixture(filename: string) {
-    const expected = JSON.parse(fs.readFileSync(filename, 'utf-8'))
-    return expected.map(function (item) { return setNullsToUndefined(item) })
-}
-
-function fail(message) {
-    throw new Error(message);
-}
-
-const setNullsToUndefined = <T extends object>(obj: T): {
-    [K in keyof T]: null extends T[K] ? (NonNullable<T[K]> | undefined) : T[K]
-} => {
-    for (const key in obj) {
-        if (obj[key] === null) {
-            obj[key] = undefined
-        }
-    }
-    return obj as any
-}
