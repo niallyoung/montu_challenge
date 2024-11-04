@@ -1,7 +1,11 @@
 import { SearchResult } from '../src'
-import { config } from 'dotenv'
 import { addressSearch} from '../src/tomtom';
-import { describe, expect, it } from '@jest/globals'
+import { config } from 'dotenv'
+import { describe, expect, it, beforeEach } from '@jest/globals'
+import { jest } from '@jest/globals'
+import axios, { AxiosResponse } from 'axios'
+const mockAxios = axios as jest.Mocked<typeof axios>;
+// jest.mock('axios')
 
 config()
 const apiKey = process.env.TOMTOM_API_KEY;
@@ -18,15 +22,25 @@ describe('addressSearch()', () => {
     })
 })
 
+// NOTE: had trouble mocking out axios response data, tried about half a dozen different patterns but nothing successful yet
+
 // describe('with mocked axios data, addressSearch()', () => {
-//     const mockAxios = axios as jest.Mocked<typeof axios>;
 //     beforeEach(() => {
-//         mockAxios.request.mockImplementationOnce(() : Promise<any> => Promise.resolve(fakeResults));
+//         // TypeError: mockAxios.get.mockResolvedValue is not a function
+//         // mockAxios.request.mockResolvedValue({ data: { results: mockResults }})
+//
+//         // TypeError: mockAxios.request.mockImplementation is not a function
+//         // mockAxios.request.mockImplementation(() =>
+//         //     Promise.resolve({ data: { results: mockResults }})
+//         // );
+//
+//         // TypeError: mockAxios.request.mockImplementation is not a function
+//         mockAxios.request.mockImplementation(() : Promise<any> => Promise.resolve({ data: { results: mockResults }}))
 //     });
 //
-//     it('returns the expected results', async () => {
-//         const searchResults = await addressSearch({key: apiKey, countrySet: 'AU', address: 'Smith St'})
-//         expect(axios.get).toHaveBeenCalledTimes(1);
+//     it('returns the expected results', () => {
+//         const searchResults = addressSearch({key: apiKey, countrySet: 'AU', address: 'Smith St'})
+//         // expect(axios.get).toHaveBeenCalledTimes(1);
 //         expect(searchResults).resolves.toContain({
 //             streetNumber: "fake-street-number-1",
 //             country: "fake-country-1",
@@ -114,15 +128,15 @@ const mockResults: SearchResult[] = [
     {
         streetNumber: "fake-street-number-1",
         streetName: "fake-street-name-1",
+        municipality: "fake-municipality-1",
         country: "fake-country-1",
-        freeformAddress: "fake-free-form-address-1",
-        municipality: "fake-municipality-1"
+        freeformAddress: "fake-free-form-address-1"
     },
     {
         streetNumber: "fake-street-number-2",
         streetName: "fake-street-name-2",
+        municipality: "fake-municipality-2",
         country: "fake-country-2",
-        freeformAddress: "fake-free-form-address-2",
-        municipality: "fake-municipality-2"
+        freeformAddress: "fake-free-form-address-2"
     }
 ]

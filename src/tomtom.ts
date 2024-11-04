@@ -20,7 +20,11 @@ export async function addressSearch(searchParams: addressSearchParams): Promise<
         return Promise.reject(error)
     }
 
-    const results = response.data.results.map(result => {
+    if (response === undefined) {
+        return Promise.reject('response not found')
+    }
+
+    const results = response.data.results.map(function (result) {
         const searchResult: SearchResult = {
             streetNumber: result.address.streetNumber,
             streetName: result.address.streetName,
