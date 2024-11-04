@@ -10,7 +10,8 @@
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
+    "resolveJsonModule": true,
   },
-  "include": ["src", "test"],
+  "include": ["src", "test", "test/fixtures/*"],
   "exclude": ["node_modules", "dist", "rollup.config.js"]
 }

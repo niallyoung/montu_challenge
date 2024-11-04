@@ -1,0 +1,18 @@
+[
+  {
+    "streetNumber": "fake-street-number-1",
+    "streetName": "fake-street-name-1",
+    "municipality": "fake-municipality-1",
+    "country": "fake-country-1",
+    "freeformAddress": "fake-free-form-address-1",
+    "score": 1.234
+  },
+  {
+    "streetNumber": "fake-street-number-2",
+    "streetName": "fake-street-name-2",
+    "municipality": "fake-municipality-2",
+    "country": "fake-country-2",
+    "freeformAddress": "fake-free-form-address-2",
+    "score": 5.678
+  }
+]
