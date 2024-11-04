@@ -9,6 +9,9 @@ export interface addressSearchParams {
     countrySet: string;
 }
 
+// NOTE: jest mocking is not working yet, may run out of time to finish off mocks and 100% coverage
+
+
 // NOTE: I had trouble getting Promises .then().catch() working with axios.get, sticking with
 // async/await for now, will come back if I have time...
 

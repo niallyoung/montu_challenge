@@ -3,8 +3,12 @@ import { getAddressSearchResults } from '../src';
 import { describe, it, expect } from '@jest/globals'
 import { loadFixture } from './helpers'
 import { jest } from '@jest/globals'
+import { addressSearch } from '../src/tomtom'
 
 config()
+
+
+// NOTE: jest mocking is not working yet, may run out of time to finish off mocks and 100% coverage
 
 describe('getAddressSearchResults()', () => {
     it('returns a promise', () => {
