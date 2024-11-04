@@ -48,12 +48,12 @@ TOMTOM_API_KEY=xyz
 TODO: spin up a test client to consume a published npm module of montu_challenge/dist/index.js
 
 ```shell
-set -a && source .env && set +a && npx run-func dist/index.js getAddressSearchResults "{ key: process.env.TOMTOM_API_KEY, countrySet: 'AU', address: "1 Eagle Street" }"
+set -a && source .env && set +a && npx run-func dist/index.js getAddressSearchResults "{ key: process.env.TOMTOM_API_KEY, countrySet: 'AU', address: "1 Eagle Street Brisbane QLD" }"
 ```
 
 sample output:
 ```code
-set -a && source .env && set +a && npx run-func dist/index.js getAddressSearchResults "{ key: process.env.TOMTOM_API_KEY, countrySet: 'AU', address: "1 Eagle Street QLD" }"
+set -a && source .env && set +a && npx run-func dist/index.js getAddressSearchResults "{ key: process.env.TOMTOM_API_KEY, countrySet: 'AU', address: "1 Eagle Street Brisbane QLD" }"
 [
   {
     streetNumber: undefined,

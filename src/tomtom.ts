@@ -31,6 +31,7 @@ export async function addressSearch(searchParams: addressSearchParams): Promise<
             municipality: result.address.municipality,
             country: result.address.country,
             freeformAddress: result.address.freeformAddress,
+            score: result.score,
         }
         return searchResult
     })
